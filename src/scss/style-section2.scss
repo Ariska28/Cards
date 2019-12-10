@@ -8,13 +8,14 @@ justify-content: space-between;
   width: 120px;
 }
 .cards-middle {
-    width: 50%;
+    width: 100%;
 }
 .card-middle {
   width: 100%;
   margin-bottom: 64px;
   border-radius: 16px;
   overflow: hidden;
+  margin-right: 32px;
 
   &--box-shadow {
     box-shadow: 3px 3px  50px 3px rgba(0,0,0,0.06);
@@ -72,7 +73,38 @@ justify-content: space-between;
     color: #374A59;
     font-family: "Open Sans", sans-serif;
     margin-bottom: 14px;
+    overflow: hidden;
+    height: 76px;
+    width: 100%;
   }
+
+
+  &__text:before {
+  content: "";
+  float: left;
+  width: 5px;
+  height: 76px;
+  }
+
+  &__text > *:first-child {
+      float: right;
+      width: 100%;
+      margin-left: -5px;
+    }
+
+      &__text:after {
+          content: "\02026";
+          box-sizing: content-box;
+          float: right;
+          position: relative;
+          top: -25px;
+          left: 100%; 
+          width: 3em;
+          margin-left: -3em;
+          padding-right: 5px;	
+          text-align: right;
+      }
+
 
   &__inf {
     display: flex;
@@ -111,12 +143,6 @@ justify-content: space-between;
 .small-svg {
     width: 80px;
 }
-.cards-small {
-    width: 40%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; 
-}
 
 .card-small {
     width: 100%;
@@ -124,6 +150,7 @@ justify-content: space-between;
     border-radius: 16px;
     overflow: hidden;
     display: flex;
+    max-height: 128px;
   
     &--box-shadow {
       box-shadow: 3px 3px  50px 3px rgba(0,0,0,0.06);
@@ -174,4 +201,8 @@ justify-content: space-between;
     }
   
 
+  }
+ 
+  .card-group {
+    display: flex;
   }
