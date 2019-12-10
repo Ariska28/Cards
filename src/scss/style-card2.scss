@@ -21,6 +21,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  box-shadow: 0px 0px 30px 10px rgba(0,0,0,0.04);
 
   &__pay {
     font-family: $fontbig;
@@ -120,6 +121,7 @@ body {
     line-height: 25px;
     color: #798289;
     border-radius: 8px;
+    text-align: center;
 
     &--gray {
       background: #ebeced;
@@ -175,6 +177,7 @@ body {
   margin-right: 40px;
   margin-top: 96px;
   position: relative;
+  box-shadow: 0px 0px 30px 10px rgba(0,0,0,0.04);
 
   &--premium {
     padding: 96px 184px 50px 184px;
@@ -256,11 +259,11 @@ body {
     transition: 0.2s;
 
     &:hover {
-      background: #0C0C37;
+      background: #ffc22b;
       color: #fff;
     }
     &:active {
-      background: #8584D8;
+      background: #fbe331;
       color: #fff;
     }
   }
