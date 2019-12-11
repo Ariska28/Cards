@@ -11,7 +11,7 @@ body {
   padding: 40px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .card {
@@ -23,7 +23,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  box-shadow: 0px 0px 30px 10px rgba(0,0,0,0.04);
+  box-shadow: 0px 0px 30px 10px rgba(0, 0, 0, 0.04);
 
   &-fire {
     height: 20px;
@@ -42,7 +42,7 @@ body {
     height: 24px;
 
     &--red {
-        background: #f8593b;
+      background: #f8593b;
     }
 
     &--yellow {
@@ -51,8 +51,8 @@ body {
     }
 
     &--green {
-        background: #2ECC71;
-        margin-right: 9px;
+      background: #2ecc71;
+      margin-right: 9px;
     }
   }
 
@@ -61,29 +61,27 @@ body {
     max-height: 200px;
     overflow: hidden;
     &__tooltipe {
-        top: 0%;
-        right: 0%;
-        position: absolute;
+      top: 0%;
+      right: 0%;
+      position: absolute;
     }
 
     &__tooltipe:before {
-        content: attr(data-title);
-        top: -50px;
-        right: 100%;
-        position: absolute;
-        width: 100px;
-        height: 100px;
-        background: red;
+      content: attr(data-title);
+      top: -50px;
+      right: 100%;
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background: red;
     }
 
     &__eat {
       object-fit: cover;
     }
     &__sign {
-
       width: 50px;
       height: 50px;
-
     }
   }
   &--last {
@@ -99,16 +97,16 @@ body {
     justify-content: space-between;
 
     &-link {
-        font-family: $fontbig;
-        color: #081f32;
-        letter-spacing: 0.01em;
-        font-size: 24px;
-        line-height: 25px;
+      font-family: $fontbig;
+      color: #081f32;
+      letter-spacing: 0.01em;
+      font-size: 24px;
+      line-height: 25px;
     }
 
-   &-circles {
-       display: flex;
-   }
+    &-circles {
+      display: flex;
+    }
   }
   &__paragraph {
     font-family: $fontsmall;
@@ -168,16 +166,24 @@ body {
       line-height: 25px;
       font-family: $fontsmall;
     }
+
+    &-order:hover {
+      background: #0f7563;
+    }
+
+    &-order:active {
+      background: #3cc2a9;
+    }
   }
 }
 
 .tooltipe:before {
-    content: attr(data-title);
-    top: -50px;
-    right: 100%;
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    background: red;
-    display: block;
+  content: attr(data-title);
+  top: -50px;
+  right: 100%;
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: red;
+  display: block;
 }
