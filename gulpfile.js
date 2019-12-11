@@ -4,14 +4,14 @@ var gulp = require('gulp'),
     del = require('del'),
     autoprefixer = require('gulp-autoprefixer'),
     minify = require('gulp-minifier');
-    rename = require('gulp-rename');
+rename = require('gulp-rename');
 
 var paths = {
     scripts: {
         all: ['./js/scripts.js'],
         content: [
             './src/js/script.js'
-        ],   
+        ],
         vendors: [
             './src/js/lib/jquery-3.2.1.min.js',
             './src/js/lib/slick.js'
@@ -29,10 +29,10 @@ gulp.task('clean', function () {
     del.sync(paths.css);
 });
 
-gulp.task('build-css', function() {
+gulp.task('build-css', function () {
     return gulp.src(paths.scss.build)
         .pipe(sass().on('error', sass.logError))
-        .pipe(autoprefixer({browsers: ['> 1%']}))
+        .pipe(autoprefixer({ browsers: ['> .1%'] }))
         .pipe(minify({
             minify: true,
             minifyCSS: true
@@ -69,8 +69,8 @@ gulp.task('build-js', function () {
 
 
 gulp.task('watch', ['build'], function () {
-    gulp.watch([paths.scss.watch], {interval: 500}, ['build-css']);
-    gulp.watch([paths.scripts.content], {interval: 300}, ['build-js']);
+    gulp.watch([paths.scss.watch], { interval: 500 }, ['build-css']);
+    gulp.watch([paths.scripts.content], { interval: 300 }, ['build-js']);
 });
 
 gulp.task('build', ['clean', 'build-css', 'build-js']);
