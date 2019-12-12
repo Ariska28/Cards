@@ -232,24 +232,41 @@ body {
   position: relative;
   box-shadow: 0px 0px 30px 10px rgba(0, 0, 0, 0.04);
 
-  .big-card__love-white {
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    top: 15px;
-    right: 15px;
-    fill: #fff;
-  }
 
-  .big-card__love-red {
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    top: 15px;
-    right: 15px;
-    fill: #f8593b;
-    display: none;
-  }
+  &__checkbox {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      height:  0;
+      width: 0;
+      top: 15px;
+      right: 15px;
+    }
+  
+    &__love-white {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      top: 15px;
+      right: 15px;
+      fill: #fff;
+    }
+  
+    &__love-red {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      top: 15px;
+      right: 15px;
+      fill: #f8593b;
+      display: none;
+    }
+  
+    &__checkbox:checked ~ .big-card__love-red {
+      display: block;
+    }
+  
+
 
   &--last {
     margin-right: 0;
@@ -437,3 +454,4 @@ body {
     }
   }
 }
+
