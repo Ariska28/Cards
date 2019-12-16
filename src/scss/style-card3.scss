@@ -226,26 +226,27 @@ body {
     top: 15px;
     right: 15px;
   }
-  &__love-red {
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    top: 15px;
-    right: 15px;
-    fill: transparent;
-  }
-
   &__love-white {
     position: absolute;
     width: 40px;
     height: 40px;
     top: 15px;
     right: 15px;
-    fill: #fff;
+    fill: transparent;
+    
   }
 
-  &__checkbox:checked ~ .big-card__love-red {
+  &__love-red {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 15px;
+    right: 15px; 
     fill: #f8593b;
+  }
+
+  &__checkbox:checked ~ .big-card__love-white {
+    fill:#fff;
   }
 
   &--last {
