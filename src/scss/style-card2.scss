@@ -89,8 +89,12 @@ body {
     margin-bottom: 20px;
   }
 
+  &__li:last-child {
+    margin-bottom: 90px;
+  }
+
   &__button {
-    margin-top: 92px;
+    margin-top: auto;
     width: 100%;
     padding: 11px 0 12px 0;
     font-family: $fontsmall;

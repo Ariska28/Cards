@@ -29,10 +29,16 @@ body {
     height: 24px;
     width: 24px;
     position: absolute;
-    top: 8px;
-    right: 45px;
+    top: 5px;
+    right: 25px;
+    background: transparent;
+    border: none;
     cursor: pointer;
+
     &:hover .card-tooltip {
+      display: block;
+    }
+    &:focus .card-tooltip {
       display: block;
     }
   }
@@ -84,35 +90,14 @@ body {
     }
   }
 
-  &-fire {
-    height: 20px;
-  }
-
   &-circle {
     width: 24px;
     height: 24px;
-    background: #f8593b;
-    border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 4;
-    width: 24px;
-    height: 24px;
-
-    &--red {
-      background: #f8593b;
-    }
-
-    &--yellow {
-      background: #ffc22b;
-      margin-left: 9px;
-    }
-
-    &--green {
-      background: #2ecc71;
-      margin-right: 9px;
-    }
+    margin-left: 9px;
   }
 
   &-img {
@@ -232,56 +217,45 @@ body {
   position: relative;
   box-shadow: 0px 0px 30px 10px rgba(0, 0, 0, 0.04);
 
-
   &__checkbox {
-      position: absolute;
-      opacity: 0;
-      cursor: pointer;
-      height:  0;
-      width: 0;
-      top: 15px;
-      right: 15px;
-    }
-  
-    &__love-white {
-      position: absolute;
-      width: 40px;
-      height: 40px;
-      top: 15px;
-      right: 15px;
-      fill: #fff;
-    }
-  
-    &__love-red {
-      position: absolute;
-      width: 40px;
-      height: 40px;
-      top: 15px;
-      right: 15px;
-      fill: #f8593b;
-      display: none;
-    }
-  
-    &__checkbox:checked ~ .big-card__love-red {
-      display: block;
-    }
-  
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+    top: 15px;
+    right: 15px;
+  }
+  &__love-red {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 15px;
+    right: 15px;
+    fill: transparent;
+  }
 
+  &__love-white {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 15px;
+    right: 15px;
+    fill: #fff;
+  }
+
+  &__checkbox:checked ~ .big-card__love-red {
+    fill: #f8593b;
+  }
 
   &--last {
     margin-right: 0;
     width: 52.3%;
   }
 
-  &__svg {
-    width: 18px;
-    height: 18px;
-  }
   &__wifi {
-    background: $blue;
     width: 24px;
     height: 24px;
-    border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -351,45 +325,64 @@ body {
     text-decoration-line: line-through;
   }
 
+
+
   &__star {
-    fill: $yellow;
     width: 20px;
     height: 20px;
-    margin-right: 6px;
-    &--bad {
-      fill: #ebeced;
-    }
+    margin-right: 8px;
   }
+
   &__mark {
     display: flex;
     align-items: center;
-    margin-bottom: 25px;
-
+   
     &-button {
-      background: $blue;
-      border-radius: 4px;
+      background-color: $blue;
       border: none;
-      font-style: normal;
-      font-weight: bold;
-      font-size: 10px;
-      line-height: 25px;
+      color: #ffffff;
       text-align: center;
       letter-spacing: 0.2em;
       font-family: $fontsmall;
-      color: #ffffff;
-      padding: 2px 14px;
-      margin-left: 10px;
-      &:hover {
-        box-shadow: 2px 2px 15px 2px rgba(black,0.3);
-      }
-  
-      &:active {
-        background: #86bdf0;
-      }
+      font-weight: bold;
+      font-size: 10px;
+      line-height: 25px;
+      border-radius: 4px;
+      padding:2px 14px;
+      margin-left:8px;
 
+      &:hover {
+       background-color:#2766a1;
+      }
+      &:active {
+        background-color: #5caefa;
+      }
     }
   }
 
+  &__mark[data-rating="4"] {
+    .big-card__star:last-child {
+      fill: #ebeced;
+    }
+    .big-card__star {
+      &:nth-child(1),
+      &:nth-child(2),
+      &:nth-child(3),
+      &:nth-child(4) {
+        fill: $yellow;
+      }
+    }
+  }
+
+  &__mark[data-rating="5"] {
+    .big-card__star {
+      fill: $yellow;
+    }
+  }
+  &__raiting-button {
+    display: flex;
+    margin-bottom:25px;
+  }
   &__button {
     border: 1px solid #d7d8d9;
     color: $blue;
@@ -411,7 +404,6 @@ body {
       background: #a8dfff;
       border: 1px solid #a8dfff;
     }
-   
   }
 
   &__paragraph {
@@ -454,4 +446,3 @@ body {
     }
   }
 }
-
